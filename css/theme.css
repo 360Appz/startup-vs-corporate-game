@@ -1,0 +1,134 @@
+/* =====================================================================
+   THE GREAT CAREER QUEST — Theme System (Light / Dark)
+   ===================================================================== */
+
+:root {
+  /* ── Backgrounds ── */
+  --bg:   #F6F2EB;
+  --bg-2: #EDE8DE;
+  --bg-3: #E5DED3;
+
+  /* ── Surfaces ── */
+  --surface:       rgba(255,255,255,0.72);
+  --surface-2:     rgba(255,255,255,0.48);
+  --surface-solid: #FFFFFF;
+
+  /* ── Borders ── */
+  --border:        rgba(0,0,0,0.07);
+  --border-strong: rgba(0,0,0,0.15);
+
+  /* ── Text ── */
+  --text-1:   #0A0812;
+  --text-2:   #3B374F;
+  --text-3:   #7E7A95;
+  --text-inv: #FFFFFF;
+
+  /* ── Accent Primaries (mutated hourly by JS) ── */
+  --a1: #FF1463;
+  --a2: #6B2FFF;
+  --a3: #00E589;
+  --a4: #FFE000;
+  --a5: #FF5E3A;
+  --a6: #00AAFF;
+
+  /* ── Accent Alphas ── */
+  --a1-15: rgba(255,20,99,0.13);
+  --a2-15: rgba(107,47,255,0.13);
+  --a3-15: rgba(0,229,137,0.13);
+  --a4-15: rgba(255,224,0,0.13);
+  --a5-15: rgba(255,94,58,0.13);
+  --a6-15: rgba(0,170,255,0.13);
+
+  /* ── Chapter Identity Colors ── */
+  --ch-core:   #6B2FFF;
+  --ch-myth:   #FF1463;
+  --ch-vs:     #FF5E3A;
+  --ch-media:  #D4B400;
+  --ch-battle: #E8103A;
+  --ch-money:  #00B87C;
+  --ch-costs:  #9B2FFF;
+  --ch-rated:  #FF5E3A;
+  --ch-gems:   #D4A017;
+  --ch-path:   #0090E0;
+  --ch-port:   #00B87C;
+  --ch-miss:   #FF7700;
+  --ch-faith:  #2850D4;
+  --ch-decide: #00C870;
+  --ch-ledger: #666688;
+  --ch-quiz:   #FF1463;
+  --ch-qotd:   #6B2FFF;
+  --ch-bottom: #6B2FFF;
+
+  /* ── Gradients ── */
+  --grad-hero:  linear-gradient(135deg, #FF1463 0%, #6B2FFF 100%);
+  --grad-money: linear-gradient(135deg, #00B87C 0%, #0090E0 100%);
+  --grad-gems:  linear-gradient(135deg, #D4A017 0%, #FF5E3A 100%);
+  --grad-quiz:  linear-gradient(135deg, #FF1463 0%, #FF5E3A 100%);
+  --grad-faith: linear-gradient(135deg, #2850D4 0%, #6B2FFF 100%);
+  --grad-port:  linear-gradient(135deg, #00B87C 0%, #6B2FFF 100%);
+
+  /* ── Typography ── */
+  --font-display: 'Syne', sans-serif;
+  --font-ui:      'Space Grotesk', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  /* ── Layout ── */
+  --nav-h:  64px;
+  --xp-h:   6px;
+  --gap:    clamp(16px, 3vw, 28px);
+  --max-w:  900px;
+
+  /* ── Radius ── */
+  --r-xs:   6px;
+  --r-sm:   12px;
+  --r-md:   20px;
+  --r-lg:   28px;
+  --r-xl:   40px;
+  --r-2xl:  56px;
+  --r-full: 9999px;
+
+  /* ── Elevation / Shadow ── */
+  --sh-sm:  0 2px 8px rgba(0,0,0,0.07);
+  --sh-md:  0 8px 32px rgba(0,0,0,0.10);
+  --sh-lg:  0 24px 64px rgba(0,0,0,0.14);
+  --sh-xl:  0 40px 100px rgba(0,0,0,0.18);
+
+  /* ── Transition Curves ── */
+  --spring:   cubic-bezier(0.16,1,0.3,1);
+  --ease-out: cubic-bezier(0.0,0,0.2,1);
+  --t-fast:   0.15s;
+  --t-med:    0.35s;
+  --t-slow:   0.60s;
+}
+
+/* ── Dark Mode Overrides ── */
+[data-theme="dark"] {
+  --bg:   #07070F;
+  --bg-2: #0E0E1C;
+  --bg-3: #14142A;
+
+  --surface:       rgba(18,18,38,0.78);
+  --surface-2:     rgba(18,18,38,0.50);
+  --surface-solid: #141428;
+
+  --border:        rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.18);
+
+  --text-1:   #F2EEF8;
+  --text-2:   #B0ADCC;
+  --text-3:   #6E6C88;
+  --text-inv: #07070F;
+
+  --a1-15: rgba(255,20,99,0.22);
+  --a2-15: rgba(107,47,255,0.22);
+  --a3-15: rgba(0,229,137,0.22);
+  --a4-15: rgba(255,224,0,0.22);
+  --a5-15: rgba(255,94,58,0.22);
+  --a6-15: rgba(0,170,255,0.22);
+
+  --sh-sm:  0 2px 8px rgba(0,0,0,0.35);
+  --sh-md:  0 8px 32px rgba(0,0,0,0.50);
+  --sh-lg:  0 24px 64px rgba(0,0,0,0.60);
+  --sh-xl:  0 40px 100px rgba(0,0,0,0.70);
+}
