@@ -46,7 +46,6 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 160px 160px;
 }
-[data-theme="dark"] body::after { opacity: 0.04; }
 
 /* ── Typography ── */
 h1, h2, h3, h4, h5 {
@@ -82,6 +81,13 @@ a:hover { color: var(--a2); }
 }
 .grad-text-money { background: var(--grad-money); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .grad-text-gems  { background: var(--grad-gems);  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+.section-title--balanced {
+  max-width: 14ch;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  letter-spacing: 0;
+}
 
 /* ── Custom Cursor ── */
 #cursor-ring {
@@ -222,6 +228,42 @@ a:hover { color: var(--a2); }
 .nav-btn:hover { background: var(--surface); border-color: var(--a1); color: var(--a1); transform: scale(1.05); }
 .nav-btn:active { transform: scale(0.95); }
 #sound-btn.muted { opacity: 0.4; }
+.nav-btn--menu {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.mobile-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: var(--gap);
+  width: min(320px, calc(100vw - 2 * var(--gap)));
+  height: min(520px, calc(100dvh - var(--nav-h) - 32px));
+  padding: 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-md);
+  background: var(--surface-solid);
+  box-shadow: var(--sh-lg);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.mobile-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mobile-menu a:hover {
+  background: var(--bg-2);
+  color: var(--a1);
+}
 
 /* ── XP Progress Strip ── */
 #xp-strip {
@@ -419,6 +461,7 @@ a:hover { color: var(--a2); }
 .carousel-item.prev {
   transform: translateX(-60px) scale(0.96);
 }
+.mobile-carousel-host { display: none; }
 
 /* ── Content Card (inside carousel) ── */
 .content-card {
@@ -558,7 +601,6 @@ a:hover { color: var(--a2); }
   filter: blur(60px);
   pointer-events: none;
 }
-[data-theme="dark"] .hero-mesh { opacity: 0.28; }
 .hero-content {
   position: relative;
   z-index: 1;
@@ -830,6 +872,51 @@ a:hover { color: var(--a2); }
   color: var(--card-accent, var(--a3));
   flex-shrink: 0;
   margin-top: 1px;
+}
+
+/* ── Career Portfolio ── */
+.portfolio-card {
+  height: clamp(420px, 62vh, 560px);
+  max-width: 860px;
+  margin-inline: auto;
+  padding: 0;
+  overflow: hidden;
+}
+.portfolio-card > .content-card__accent {
+  position: static;
+  width: 100%;
+  height: 3px;
+  margin: 0;
+  background: var(--grad-port);
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+}
+.portfolio-card__scroll {
+  height: calc(100% - 3px);
+  overflow-y: auto;
+  padding: clamp(22px, 4vw, 32px);
+  scrollbar-gutter: stable;
+}
+.portfolio-card__question {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  color: var(--text-1);
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.portfolio-grid .stat-card {
+  text-align: left;
+  padding: 14px 16px;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+}
+.portfolio-card .highlight-box {
+  border-left-color: var(--a3);
 }
 
 /* ── Christian Perspective ── */
@@ -1188,6 +1275,133 @@ footer a { color: var(--a1); }
   .quiz-options { grid-template-columns: 1fr; }
   .result-breakdown { grid-template-columns: 1fr 1fr; }
   .money-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 1025px) {
+  .nav-btn--menu,
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-carousel-source { display: none !important; }
+  .mobile-carousel-host { display: block; }
+  .tab-bar {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--r-md);
+    scroll-snap-type: x proximity;
+  }
+  .tab-btn {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    padding-inline: 16px;
+  }
+  #ch-gems .carousel-track,
+  #ch-vs .carousel-track,
+  #ch-media .carousel-track,
+  #ch-money .carousel-track,
+  #ch-decide .carousel-track {
+    min-height: 0;
+  }
+  #ch-gems .content-card,
+  #ch-vs .content-card,
+  #ch-media .content-card,
+  #ch-money .money-card,
+  #ch-decide .money-card {
+    max-height: min(620px, 68dvh);
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    overscroll-behavior: contain;
+  }
+  #ch-media .content-card {
+    height: min(620px, 68dvh);
+  }
+  #ch-money .money-card,
+  #ch-decide .money-card {
+    height: auto;
+    min-height: 360px;
+  }
+  #ch-gems .tab-panel {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  #nav {
+    padding-inline: 14px;
+  }
+  .nav-logo {
+    min-width: 0;
+    font-size: 0.92rem;
+  }
+  .nav-logo span {
+    display: none;
+  }
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .mobile-menu {
+    top: calc(100% + 8px);
+    right: 14px;
+    width: min(300px, calc(100vw - 28px));
+    height: min(440px, calc(100dvh - var(--nav-h) - 24px));
+  }
+  .carousel-nav {
+    justify-content: space-between;
+  }
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .content-card {
+    padding: 20px;
+    border-radius: var(--r-md);
+  }
+  .content-card h3 {
+    font-size: 1.22rem;
+  }
+  .content-card__eyebrow,
+  .truth-badge,
+  .money-card__label {
+    line-height: 1.35;
+    white-space: normal;
+  }
+  .content-card ul,
+  .content-card ol {
+    gap: 6px;
+  }
+  #ch-gems .content-card,
+  #ch-vs .content-card,
+  #ch-media .content-card,
+  #ch-money .money-card,
+  #ch-decide .money-card {
+    max-height: min(560px, 66dvh);
+  }
+  #ch-media .content-card {
+    height: min(560px, 66dvh);
+  }
+  #ch-vs-title {
+    font-size: clamp(1.55rem, 8.5vw, 2.2rem);
+    line-height: 1.12;
+    max-width: 100%;
+  }
+  #ch-vs-title span {
+    display: block;
+  }
+  .money-card {
+    padding: 22px 20px;
+    border-radius: var(--r-md);
+  }
+  .portfolio-card {
+    height: min(560px, 70dvh);
+    border-radius: var(--r-lg);
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── Utility ── */

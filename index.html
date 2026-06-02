@@ -64,7 +64,28 @@
     </div>
     <div class="nav-actions">
       <button id="sound-btn" class="nav-btn" title="Toggle sounds" aria-label="Toggle sounds">🔊</button>
-      <button id="theme-btn" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+      <button id="mobile-menu-btn" class="nav-btn nav-btn--menu" title="Open menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="#hero">Home</a>
+      <a href="#ch-core">Honest Answer</a>
+      <a href="#ch-myths">Big Myths</a>
+      <a href="#ch-vs">Startup vs Entrepreneur</a>
+      <a href="#ch-media">Media Hype</a>
+      <a href="#ch-battle">Brutal Realities</a>
+      <a href="#ch-money">Money Reality</a>
+      <a href="#ch-costs">Hidden Costs</a>
+      <a href="#ch-rated">Overrated</a>
+      <a href="#ch-gems">Hidden Gems</a>
+      <a href="#ch-path">Best Path</a>
+      <a href="#ch-port">Career Portfolio</a>
+      <a href="#ch-miss">Algorithm Misses</a>
+      <a href="#ch-faith">Faith & Work</a>
+      <a href="#ch-decide">Decision Framework</a>
+      <a href="#ch-ledger">Gems Summary</a>
+      <a href="#quiz-arena">Quiz</a>
+      <a href="#qotd-section">Question of the Day</a>
+      <a href="#ch-bottom">Verdict</a>
     </div>
   </nav>
 
@@ -181,10 +202,10 @@
         <span>⚡</span>
         <span>NOT THE SAME THING</span>
       </div>
-      <h2 id="ch-vs-title" class="reveal stagger-1">Startup vs Entrepreneurship</h2>
+      <h2 id="ch-vs-title" class="section-title--balanced reveal stagger-1">Startup vs <span>Entrepreneurship</span></h2>
       <p class="chapter-intro reveal stagger-2">This is where many people get confused. They are not the same thing.</p>
 
-      <div class="faith-grid reveal stagger-3">
+      <div class="faith-grid mobile-carousel-source reveal stagger-3" id="vs-card-grid">
         <!-- Startup -->
         <div class="glass-card glass-card--solid" style="padding:24px;">
           <div class="content-card__eyebrow" style="--card-accent:var(--a1)">🚀 Startup</div>
@@ -219,6 +240,7 @@
           <div class="highlight-box mt-md" style="--card-accent:var(--a3)">Entrepreneurship is a much wider life and wealth-building category.</div>
         </div>
       </div>
+      <div id="carousel-vs-host" class="mobile-carousel-host reveal stagger-3"></div>
 
       <div class="glass-card mt-lg reveal stagger-4" style="padding:20px 24px;border-left:3px solid var(--a4)">
         <p><strong>Important distinction:</strong> A startup is a specific high-risk growth vehicle. Entrepreneurship is a much wider life and wealth-building category.</p>
@@ -293,7 +315,7 @@
       </div>
 
       <p class="chapter-intro reveal stagger-4" style="margin-bottom:16px;"><strong>Better framing — each path has its edge:</strong></p>
-      <div class="money-grid reveal stagger-4">
+      <div class="money-grid mobile-carousel-source reveal stagger-4" id="money-card-grid">
         <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a6)">
           <div class="money-card__label" style="color:var(--a6)">🏢 Corporate is better for</div>
           <ul>
@@ -320,6 +342,7 @@
           </ul>
         </div>
       </div>
+      <div id="carousel-money-host" class="mobile-carousel-host reveal stagger-4"></div>
     </div>
   </section>
 
@@ -408,7 +431,7 @@
           <div id="carousel-gem-corp-host"></div>
         </div>
         <div class="tab-panel" data-panel="gem-emp" role="tabpanel">
-          <div id="carousel-gem-emp-host" style="padding:24px;"></div>
+          <div id="carousel-gem-emp-host"></div>
         </div>
       </div>
     </div>
@@ -445,27 +468,29 @@
       <h2 id="ch-port-title" class="reveal stagger-1">The Most Underrated Strategy: Career Portfolio</h2>
       <p class="chapter-intro reveal stagger-2">Instead of asking, "Corporate or entrepreneur?" ask a smarter question.</p>
 
-      <div class="glass-card glass-card--solid reveal stagger-3" style="padding:28px 32px;">
-        <div class="content-card__accent" style="background:var(--grad-port);width:100%;height:3px;margin-bottom:20px;border-radius:var(--r-full);"></div>
-        <p style="font-family:var(--font-display);font-size:clamp(1rem,2.5vw,1.4rem);font-weight:700;color:var(--text-1)">
-          "How do I build a portfolio of income, skills, reputation, relationships, and ownership?"
-        </p>
-        <h5 class="mt-lg">A strong career portfolio may include:</h5>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px;">
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">💼 Main job</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">📈 Investments</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🏗️ Side business</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🌟 Personal brand</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🤝 Consulting</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🕸️ Network</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🎯 Deep skill</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🏭 Industry expertise</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">✝️ Spiritual grounding</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">👨‍👩‍👦 Family stability</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">❤️ Health</div>
-        </div>
-        <div class="highlight-box mt-lg" style="border-left-color:var(--a3)">
+      <div class="portfolio-card glass-card glass-card--solid reveal stagger-3">
+        <div class="content-card__accent"></div>
+        <div class="portfolio-card__scroll">
+          <p class="portfolio-card__question">
+            "How do I build a portfolio of income, skills, reputation, relationships, and ownership?"
+          </p>
+          <h5 class="mt-lg">A strong career portfolio may include:</h5>
+          <div class="portfolio-grid">
+            <div class="stat-card">💼 Main job</div>
+            <div class="stat-card">📈 Investments</div>
+            <div class="stat-card">🏗️ Side business</div>
+            <div class="stat-card">🌟 Personal brand</div>
+            <div class="stat-card">🤝 Consulting</div>
+            <div class="stat-card">🕸️ Network</div>
+            <div class="stat-card">🎯 Deep skill</div>
+            <div class="stat-card">🏭 Industry expertise</div>
+            <div class="stat-card">✝️ Spiritual grounding</div>
+            <div class="stat-card">👨‍👩‍👦 Family stability</div>
+            <div class="stat-card">❤️ Health</div>
+          </div>
+          <div class="highlight-box mt-lg">
           <strong>Modern reality:</strong> The safest person is not the employee or the founder. The safest person is the one with portable skills, trusted relationships, financial discipline, and adaptive capacity.
+          </div>
         </div>
       </div>
     </div>
@@ -547,7 +572,7 @@
       <h2 id="ch-decide-title" class="reveal stagger-1">Practical Decision Framework</h2>
       <p class="chapter-intro reveal stagger-2">Your clear, honest checklist — word for word.</p>
 
-      <div class="money-grid reveal stagger-3" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+      <div class="money-grid mobile-carousel-source reveal stagger-3" id="decision-card-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
 
         <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a6)">
           <div class="money-card__label" style="color:var(--a6)">🏢 Choose corporate now if:</div>
@@ -575,6 +600,7 @@
         </div>
 
       </div>
+      <div id="carousel-decision-host" class="mobile-carousel-host reveal stagger-3"></div>
     </div>
   </section>
 

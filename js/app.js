@@ -58,6 +58,32 @@
     return wrap;
   }
 
+  function renderStartupEntrepreneurCard(item) {
+    var card = el('div', 'content-card glass-card glass-card--solid');
+    card.style.setProperty('--card-accent', item.accent);
+    var accent = el('div', 'content-card__accent');
+    accent.style.background = item.accent;
+    card.appendChild(accent);
+    var eyebrow = el('div', 'content-card__eyebrow');
+    eyebrow.innerHTML = item.icon + ' ' + item.title;
+    card.appendChild(eyebrow);
+    card.appendChild(el('p', 'mt-md', item.description));
+    card.appendChild(el('h5', 'mt-md', item.listTitle));
+    card.appendChild(ul(item.items, 'mt-md'));
+    if (item.note) {
+      var note = el('p', 'mt-md');
+      note.style.cssText = 'font-size:.82rem;color:var(--text-3);font-style:italic';
+      note.textContent = item.note;
+      card.appendChild(note);
+    }
+    card.appendChild(el('div', 'highlight-box mt-md', item.truth));
+    return card;
+  }
+
+  function renderClonedCard(node) {
+    return node.cloneNode(true);
+  }
+
   /* ────────────────────────────────────────────
      Renderers
   ──────────────────────────────────────────── */
@@ -367,6 +393,34 @@
       mediaContainer.appendChild(carouselShell('media', D.MEDIA_LIES, renderMediaLieCard));
     }
 
+    /* ── Startup vs Entrepreneurship: mobile/tablet carousel ── */
+    var vsHost = document.getElementById('carousel-vs-host');
+    if (vsHost && D.STARTUP_VS_ENT) {
+      var vs = D.STARTUP_VS_ENT;
+      var vsItems = [
+        {
+          title: vs.startup.title,
+          icon: vs.startup.icon,
+          description: vs.startup.description,
+          listTitle: 'Typical traits:',
+          items: vs.startup.traits,
+          truth: vs.startup.truth,
+          accent: 'var(--a1)'
+        },
+        {
+          title: vs.entrepreneurship.title,
+          icon: vs.entrepreneurship.icon,
+          description: vs.entrepreneurship.description + ' It can include:',
+          listTitle: 'Examples:',
+          items: vs.entrepreneurship.examples,
+          note: vs.entrepreneurship.kauffman,
+          truth: vs.entrepreneurship.truth,
+          accent: 'var(--a3)'
+        }
+      ];
+      vsHost.appendChild(carouselShell('startup-vs-entrepreneurship', vsItems, renderStartupEntrepreneurCard));
+    }
+
     /* ── Startup Realities ── */
     var startupRealContainer = document.getElementById('carousel-startup-real-host');
     if (startupRealContainer) {
@@ -377,6 +431,14 @@
     var corpRealContainer = document.getElementById('carousel-corp-real-host');
     if (corpRealContainer) {
       corpRealContainer.appendChild(carouselShell('corp-realities', D.CORP_REALITIES, function (r) { return renderRealityCard(r, false); }));
+    }
+
+    /* ── Money Reality: mobile/tablet carousel from existing cards ── */
+    var moneyHost = document.getElementById('carousel-money-host');
+    var moneyGrid = document.getElementById('money-card-grid');
+    if (moneyHost && moneyGrid) {
+      var moneyCards = Array.from(moneyGrid.querySelectorAll('.money-card'));
+      moneyHost.appendChild(carouselShell('money-paths', moneyCards, renderClonedCard));
     }
 
     /* ── Hidden Costs: Startup ── */
@@ -451,15 +513,20 @@
     var gemEmpHost = document.getElementById('carousel-gem-emp-host');
     if (gemEmpHost) {
       var empData = D.HIDDEN_GEMS.employee;
-      var empCard = el('div', 'content-card glass-card glass-card--solid');
-      var empAcc = el('div', 'content-card__accent'); empAcc.style.background = 'var(--a3)'; empCard.appendChild(empAcc);
-      empCard.appendChild(el('h3', '', 'Startup Employment Gems'));
-      empCard.appendChild(el('h5', 'mt-md', 'Benefits:'));
-      empCard.appendChild(ul(empData.benefits));
-      empCard.appendChild(el('h5', 'mt-md', 'Risks:'));
-      empCard.appendChild(ul(empData.risks));
-      empCard.appendChild(el('div', 'highlight-box mt-md', '<strong>Best profile:</strong> ' + empData.profile));
-      gemEmpHost.appendChild(empCard);
+      var empItems = [
+        { title: 'Benefits', icon: '👤', items: empData.benefits, note: null, accent: 'var(--a3)' },
+        { title: 'Risks', icon: '⚠️', items: empData.risks, note: '<strong>Best profile:</strong> ' + empData.profile, accent: 'var(--a1)' }
+      ];
+      gemEmpHost.appendChild(carouselShell('gem-employee', empItems, function (item) {
+        var card = el('div', 'content-card glass-card glass-card--solid');
+        card.style.setProperty('--card-accent', item.accent);
+        var acc = el('div', 'content-card__accent'); acc.style.background = item.accent; card.appendChild(acc);
+        var badge = el('div', 'truth-badge'); badge.innerHTML = item.icon + ' Employee Gems'; card.appendChild(badge);
+        card.appendChild(el('h3', '', item.title));
+        card.appendChild(ul(item.items, 'mt-md'));
+        if (item.note) card.appendChild(el('div', 'highlight-box mt-md', item.note));
+        return card;
+      }));
     }
 
     /* ── Best Path ── */
@@ -490,6 +557,13 @@
         host.appendChild(list);
       }
     });
+
+    var decisionCarouselHost = document.getElementById('carousel-decision-host');
+    var decisionGrid = document.getElementById('decision-card-grid');
+    if (decisionCarouselHost && decisionGrid) {
+      var decisionCards = Array.from(decisionGrid.querySelectorAll('.money-card'));
+      decisionCarouselHost.appendChild(carouselShell('decision-framework', decisionCards, renderClonedCard));
+    }
 
     /* ── Init all carousels ── */
     var sound = global._gcqSound || null;
@@ -524,10 +598,27 @@
     var achievements = new D.AchievementManager(sound, xp);
     global._gcqAchievements = achievements;
 
-    /* Theme */
-    var theme = new D.ThemeManager(sound);
-    var themeBtn = document.getElementById('theme-btn');
-    if (themeBtn) themeBtn.addEventListener('click', function () { theme.toggle(); });
+    document.documentElement.setAttribute('data-theme', 'light');
+    try { localStorage.removeItem('gcq-theme'); } catch (e) {}
+
+    var mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', function () {
+        var isOpen = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
+        mobileMenuBtn.textContent = isOpen ? '☰' : '×';
+        mobileMenu.hidden = isOpen;
+        if (sound) sound.click();
+      });
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          mobileMenuBtn.textContent = '☰';
+          mobileMenu.hidden = true;
+        });
+      });
+    }
 
     /* Sound toggle */
     var soundBtn = document.getElementById('sound-btn');
