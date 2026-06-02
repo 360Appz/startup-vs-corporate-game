@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="The Great Career Quest — an interactive adventure exploring Startup vs Corporate vs Entrepreneurship. All the truths media never tells you.">
-  <title>THE GREAT CAREER QUEST ⚔️</title>
+  <title>THE GREAT CAREER QUEST - THE GREAT CAREER QUEST</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
 
   <!-- ══════════════════════════════════════════
        CUSTOM CURSOR
@@ -59,12 +60,33 @@
        NAVIGATION
   ══════════════════════════════════════════ -->
   <nav id="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-logo">
-      GCQ <span>· THE GREAT CAREER QUEST</span>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Back to main landing page">
+      GCQ <span>- THE GREAT CAREER QUEST</span>
+    </a>
     <div class="nav-actions">
       <button id="sound-btn" class="nav-btn" title="Toggle sounds" aria-label="Toggle sounds">🔊</button>
-      <button id="theme-btn" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+      <button id="mobile-menu-btn" class="nav-btn nav-btn--menu" title="Open menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="index.html">Home</a>
+      <a href="honest-answer.html">01 - Core Truth</a>
+      <a href="big-myths.html">02 - The Myth Kingdom</a>
+      <a href="startup-vs-entrepreneurship.html">03 - Not The Same Thing</a>
+      <a href="media-hype.html">04 - Media Hype</a>
+      <a href="brutal-realities.html">05 - Brutal Realities</a>
+      <a href="money-reality.html">06 - Money Reality</a>
+      <a href="hidden-costs.html">07 - Hidden Costs</a>
+      <a href="overrated.html">08 - Overrated</a>
+      <a href="hidden-gems.html">09 - Hidden Gems</a>
+      <a href="best-path.html">10 - Best Path</a>
+      <a href="career-portfolio.html">11 - Career Portfolio</a>
+      <a href="algorithm-misses.html">12 - Algorithm Misses</a>
+      <a href="faith-work.html">13 - Faith & Work</a>
+      <a href="decision-framework.html">14 - Decision Framework</a>
+      <a href="gems-summary.html">15 - Gems Summary</a>
+      <a href="quiz.html">16 - Boss Battle</a>
+      <a href="question-of-the-day.html">17 - Quest Oracle</a>
+      <a href="verdict.html">18 - Bottom Line</a>
     </div>
   </nav>
 
@@ -76,7 +98,8 @@
   <!-- ══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════ -->
-  <section id="hero" class="section" aria-labelledby="hero-title">
+  
+<section id="hero" class="section" aria-labelledby="hero-title">
     <canvas id="particle-canvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></canvas>
     <div class="hero-mesh" aria-hidden="true"></div>
 
@@ -99,637 +122,168 @@
       </div>
 
       <div class="hero-cta-group">
-        <a href="#ch-core" class="btn btn-primary">
+        <a href="honest-answer.html" class="btn btn-primary">
           ⚔️ Start the Quest
         </a>
-        <button id="hero-quiz-btn" class="btn btn-ghost">
+        <a id="hero-quiz-btn" class="btn btn-ghost" href="quiz.html">
           ⚡ Boss Battle Quiz
-        </button>
+        </a>
       </div>
     </div>
 
     <div class="hero-scroll-hint" aria-hidden="true">
       <div class="scroll-arrow"></div>
-      <span>Scroll to explore</span>
+      <span>Choose a chapter below</span>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
-       CH 01 · CORE TRUTH
-  ══════════════════════════════════════════ -->
-  <section id="ch-core" class="section" data-chapter="ch-core" aria-labelledby="ch-core-title">
-    <div class="chapter-bg-num" aria-hidden="true">01</div>
+  <section id="chapter-menu" class="section landing-menu" aria-labelledby="chapter-menu-title">
     <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-core);--ch-border:var(--ch-core);--ch-bg:var(--a2-15)">
-        <span class="ch-num">01</span>
-        <span>🎯</span>
-        <span>CORE TRUTH</span>
+      <div class="chapter-label reveal" style="--ch-c:var(--a1);--ch-border:var(--a1);--ch-bg:var(--a1-15)">
+        <span>MENU</span>
+        <span>CHAPTER SELECT</span>
       </div>
-      <h2 id="ch-core-title" class="reveal stagger-1">The Honest Answer</h2>
-      <p class="chapter-intro reveal stagger-2">Before myths, before battles — here is the full picture in one paragraph.</p>
-
-      <div class="core-statement glass-card reveal stagger-3">
-        <div class="core-statement__bg" aria-hidden="true"></div>
-        <p>Startups, entrepreneurship, and corporate life are <strong>not moral opposites</strong>. They are different games with different risk structures. Media often sells entrepreneurship as "freedom, passion, disruption, wealth," and corporate as "safety, bureaucracy, soul-crushing." Reality is more mixed: startups can be brutal, lonely, financially irrational, and status-driven; corporate life can be limiting, political, and slow, but also an underrated training ground for capital, networks, discipline, credibility, and lifestyle stability.</p>
-        <div class="core-kicker">The best path depends less on "startup vs corporate" and more on <strong>your season of life, risk capacity, temperament, skill stack, family obligations, financial runway, and appetite for uncertainty</strong>.</div>
-      </div>
-
-      <!-- Stats -->
-      <div class="stat-strip mt-lg">
-        <div class="stat-card glass-card reveal stagger-1">
-          <div class="stat-number grad-text">~50%</div>
-          <div class="stat-label">New U.S. businesses survive to year five (BLS)</div>
+      <h2 id="chapter-menu-title" class="reveal stagger-1">Pick a Page</h2>
+      <p class="chapter-intro reveal stagger-2">Each section now opens on its own page, so Chrome has much less to carry at once.</p>
+      <div class="chapter-picker carousel-wrap reveal stagger-3" aria-label="Chapter page picker carousel">
+        <div class="carousel-nav">
+          <button class="carousel-btn" data-carousel-prev aria-label="Previous page">&#8592;</button>
+          <span class="carousel-counter" data-carousel-counter>1 / 18</span>
+          <button class="carousel-btn" data-carousel-next aria-label="Next page">&#8594;</button>
         </div>
-        <div class="stat-card glass-card reveal stagger-2">
-          <div class="stat-number" style="color:var(--ch-core)">3.9 yrs</div>
-          <div class="stat-label">Median employee tenure (BLS, Jan 2024)</div>
+        <div class="carousel-track">
+        <div class="carousel-item active" data-slide="0" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="honest-answer.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">01</span><span class="chapter-card__icon">01</span></div>
+                    <h3>The Honest Answer</h3>
+                    <p>The full picture in one paragraph, before the myths and noise.</p>
+                  </a>
         </div>
-        <div class="stat-card glass-card reveal stagger-3">
-          <div class="stat-number" style="color:var(--a3)">39%</div>
-          <div class="stat-label">Key skills changing by 2030 (WEF 2025)</div>
+        <div class="carousel-item" data-slide="1" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="big-myths.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">02</span><span class="chapter-card__icon">02</span></div>
+                    <h3>Two Big Myths You've Been Sold</h3>
+                    <p>The narrative media built, and the reality underneath it.</p>
+                  </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 02 · THE MYTH KINGDOM
-  ══════════════════════════════════════════ -->
-  <section id="ch-myths" class="section" data-chapter="ch-myths" aria-labelledby="ch-myths-title">
-    <div class="chapter-bg-num" aria-hidden="true">02</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-myth);--ch-border:var(--ch-myth);--ch-bg:var(--a1-15)">
-        <span class="ch-num">02</span>
-        <span>🔥</span>
-        <span>THE MYTH KINGDOM</span>
-      </div>
-      <h2 id="ch-myths-title" class="reveal stagger-1">Two Big Myths You've Been Sold</h2>
-      <p class="chapter-intro reveal stagger-2">Media built a narrative. Here is the reality, word for word.</p>
-      <!-- Carousel populated by JS -->
-      <div id="carousel-myths-host" class="reveal stagger-3"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 03 · STARTUP vs ENTREPRENEUR
-  ══════════════════════════════════════════ -->
-  <section id="ch-vs" class="section" data-chapter="ch-vs" aria-labelledby="ch-vs-title">
-    <div class="chapter-bg-num" aria-hidden="true">03</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-vs);--ch-border:var(--ch-vs);--ch-bg:var(--a5-15)">
-        <span class="ch-num">03</span>
-        <span>⚡</span>
-        <span>NOT THE SAME THING</span>
-      </div>
-      <h2 id="ch-vs-title" class="reveal stagger-1">Startup vs Entrepreneurship</h2>
-      <p class="chapter-intro reveal stagger-2">This is where many people get confused. They are not the same thing.</p>
-
-      <div class="faith-grid reveal stagger-3">
-        <!-- Startup -->
-        <div class="glass-card glass-card--solid" style="padding:24px;">
-          <div class="content-card__eyebrow" style="--card-accent:var(--a1)">🚀 Startup</div>
-          <p class="mt-md">A startup is usually trying to build something scalable, often under uncertainty, sometimes with venture capital.</p>
-          <h5 class="mt-md">Typical traits:</h5>
-          <ul style="padding-left:1.2em;display:flex;flex-direction:column;gap:4px;margin-top:8px;font-size:.88rem;color:var(--text-2)">
-            <li>Fast growth ambition.</li>
-            <li>High uncertainty.</li>
-            <li>Product-market fit search.</li>
-            <li>Fundraising pressure.</li>
-            <li>Hiring before stability.</li>
-            <li>"Winner-take-most" dynamics.</li>
-            <li>High failure probability.</li>
-            <li>Potentially large upside.</li>
-          </ul>
-          <div class="highlight-box mt-md" style="--card-accent:var(--a1)">A startup is a specific high-risk growth vehicle.</div>
+        <div class="carousel-item" data-slide="2" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="startup-vs-entrepreneurship.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">03</span><span class="chapter-card__icon">03</span></div>
+                    <h3>Startup vs Entrepreneurship</h3>
+                    <p>The important distinction many people blur together.</p>
+                  </a>
         </div>
-
-        <!-- Entrepreneurship -->
-        <div class="glass-card glass-card--solid" style="padding:24px;">
-          <div class="content-card__eyebrow" style="--card-accent:var(--a3)">💼 Entrepreneurship</div>
-          <p class="mt-md">Entrepreneurship is broader. It can include:</p>
-          <ul style="padding-left:1.2em;display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:8px;font-size:.88rem;color:var(--text-2)">
-            <li>A clinic.</li><li>A consulting practice.</li>
-            <li>A tuition center.</li><li>A café.</li>
-            <li>A property agency.</li><li>A niche import business.</li>
-            <li>A YouTube/media business.</li><li>A local service company.</li>
-            <li>A professional practice.</li><li>A software product.</li>
-            <li>A family business.</li>
-          </ul>
-          <p class="mt-md" style="font-size:.82rem;color:var(--text-3);font-style:italic">A Kauffman report noted that many entrepreneurs have no desire to build high-growth businesses and instead aim to provide existing services to existing customers, often for non-economic reasons.</p>
-          <div class="highlight-box mt-md" style="--card-accent:var(--a3)">Entrepreneurship is a much wider life and wealth-building category.</div>
+        <div class="carousel-item" data-slide="3" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="media-hype.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">04</span><span class="chapter-card__icon">04</span></div>
+                    <h3>What Media Overpromotes</h3>
+                    <p>What gets glamorized, simplified, or left out.</p>
+                  </a>
         </div>
-      </div>
-
-      <div class="glass-card mt-lg reveal stagger-4" style="padding:20px 24px;border-left:3px solid var(--a4)">
-        <p><strong>Important distinction:</strong> A startup is a specific high-risk growth vehicle. Entrepreneurship is a much wider life and wealth-building category.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 04 · MEDIA'S MATRIX
-  ══════════════════════════════════════════ -->
-  <section id="ch-media" class="section" data-chapter="ch-media" aria-labelledby="ch-media-title">
-    <div class="chapter-bg-num" aria-hidden="true">04</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-media);--ch-border:var(--ch-media);--ch-bg:var(--a4-15)">
-        <span class="ch-num">04</span>
-        <span>📺</span>
-        <span>MEDIA'S MATRIX</span>
-      </div>
-      <h2 id="ch-media-title" class="reveal stagger-1">What Media Overpromotes</h2>
-      <p class="chapter-intro reveal stagger-2">Four narratives the algorithm keeps selling you — and why they're incomplete.</p>
-      <div id="carousel-media-host" class="reveal stagger-3"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 05 · THE BATTLEFIELD
-  ══════════════════════════════════════════ -->
-  <section id="ch-battle" class="section" data-chapter="ch-battle" aria-labelledby="ch-battle-title">
-    <div class="chapter-bg-num" aria-hidden="true">05</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-battle);--ch-border:var(--ch-battle);--ch-bg:var(--a1-15)">
-        <span class="ch-num">05</span>
-        <span>💀</span>
-        <span>THE BATTLEFIELD</span>
-      </div>
-      <h2 id="ch-battle-title" class="reveal stagger-1">Brutal Realities</h2>
-      <p class="chapter-intro reveal stagger-2">No highlight reel. No LinkedIn victory post. Just the unfiltered battlefield.</p>
-
-      <div class="tab-group reveal stagger-3">
-        <div class="tab-bar" role="tablist">
-          <button class="tab-btn active" data-tab="startup-real" role="tab" aria-selected="true">🚀 Startup Realities</button>
-          <button class="tab-btn" data-tab="corp-real" role="tab" aria-selected="false">🏢 Corporate Realities</button>
+        <div class="carousel-item" data-slide="4" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="brutal-realities.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">05</span><span class="chapter-card__icon">05</span></div>
+                    <h3>Brutal Realities</h3>
+                    <p>The rough edges of startup and corporate life side by side.</p>
+                  </a>
         </div>
-        <div class="tab-panel active" data-panel="startup-real" role="tabpanel">
-          <div id="carousel-startup-real-host"></div>
+        <div class="carousel-item" data-slide="5" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="money-reality.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">06</span><span class="chapter-card__icon">06</span></div>
+                    <h3>Money Reality: Which Path Makes More?</h3>
+                    <p>How risk, upside, salary, and survivability actually differ.</p>
+                  </a>
         </div>
-        <div class="tab-panel" data-panel="corp-real" role="tabpanel">
-          <div id="carousel-corp-real-host"></div>
+        <div class="carousel-item" data-slide="6" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="hidden-costs.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">07</span><span class="chapter-card__icon">07</span></div>
+                    <h3>Hidden Costs They Never Show You</h3>
+                    <p>Financial, emotional, relational, and spiritual tradeoffs.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="7" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="overrated.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">08</span><span class="chapter-card__icon">08</span></div>
+                    <h3>What Is Overrated</h3>
+                    <p>The shiny things that often matter less than people think.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="8" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="hidden-gems.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">09</span><span class="chapter-card__icon">09</span></div>
+                    <h3>Hidden Gems Hiding in Plain Sight</h3>
+                    <p>The underrated advantages in each path.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="9" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="best-path.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">10</span><span class="chapter-card__icon">10</span></div>
+                    <h3>Best Path by Personality</h3>
+                    <p>Matching paths to temperament, obligations, and season of life.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="10" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="career-portfolio.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">11</span><span class="chapter-card__icon">11</span></div>
+                    <h3>The Most Underrated Strategy: Career Portfolio</h3>
+                    <p>A practical strategy beyond one identity or career lane.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="11" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="algorithm-misses.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">12</span><span class="chapter-card__icon">12</span></div>
+                    <h3>What the Algorithm Won't Tell You</h3>
+                    <p>The quieter truths that do not trend well.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="12" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="faith-work.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">13</span><span class="chapter-card__icon">13</span></div>
+                    <h3>Christian Perspective: Work, Calling, and Ambition</h3>
+                    <p>A grounded lens for ambition, calling, and responsibility.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="13" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="decision-framework.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">14</span><span class="chapter-card__icon">14</span></div>
+                    <h3>Practical Decision Framework</h3>
+                    <p>Choose based on conditions, constraints, and risk capacity.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="14" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="gems-summary.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">15</span><span class="chapter-card__icon">15</span></div>
+                    <h3>The Hidden Gems Summary</h3>
+                    <p>A compact recap of overrated and underrated realities.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="15" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="quiz.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">16</span><span class="chapter-card__icon">16</span></div>
+                    <h3>Rapid Fire Quiz</h3>
+                    <p>A lighter standalone page for the quiz experience.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="16" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="question-of-the-day.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">17</span><span class="chapter-card__icon">17</span></div>
+                    <h3>Question of the Day</h3>
+                    <p>Daily reflection questions, shuffled fresh.</p>
+                  </a>
+        </div>
+        <div class="carousel-item" data-slide="17" role="group" aria-roledescription="slide">
+          <a class="chapter-card glass-card glass-card--solid reveal" href="verdict.html">
+                    <div class="chapter-card__top"><span class="chapter-card__num">18</span><span class="chapter-card__icon">18</span></div>
+                    <h3>The Verdict</h3>
+                    <p>The closing synthesis in one clear statement.</p>
+                  </a>
+        </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
-       CH 06 · THE MONEY GAME
-  ══════════════════════════════════════════ -->
-  <section id="ch-money" class="section" data-chapter="ch-money" aria-labelledby="ch-money-title">
-    <div class="chapter-bg-num" aria-hidden="true">06</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-money);--ch-border:var(--ch-money);--ch-bg:var(--a3-15)">
-        <span class="ch-num">06</span>
-        <span>💰</span>
-        <span>THE MONEY GAME</span>
-      </div>
-      <h2 id="ch-money-title" class="reveal stagger-1">Money Reality: Which Path Makes More?</h2>
-      <p class="chapter-intro reveal stagger-2">The honest answer: it depends on the distribution. Here is the full picture.</p>
-
-      <div class="glass-card glass-card--solid reveal stagger-3" style="padding:24px 28px;margin-bottom:20px;">
-        <p>Corporate income is usually more predictable. Entrepreneurship has a wider spread.</p>
-        <p class="mt-md">Entrepreneurs can earn: far less than employees · similar to employees · much more than employees · nothing for years · a large exit once · good cash flow quietly · paper wealth that never becomes liquid.</p>
-        <p class="mt-md" style="font-size:.82rem;color:var(--text-3);font-style:italic">Hamilton's classic Journal of Political Economy study found many entrepreneurs had lower initial earnings and lower earnings growth than paid employment, yet persisted, implying non-monetary benefits were substantial.</p>
-      </div>
-
-      <p class="chapter-intro reveal stagger-4" style="margin-bottom:16px;"><strong>Better framing — each path has its edge:</strong></p>
-      <div class="money-grid reveal stagger-4">
-        <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a6)">
-          <div class="money-card__label" style="color:var(--a6)">🏢 Corporate is better for</div>
-          <ul>
-            <li>Stable income.</li><li>Mortgages.</li><li>Family planning.</li>
-            <li>Predictable savings.</li><li>Credential building.</li>
-            <li>Structured career capital.</li><li>Learning inside systems.</li>
-          </ul>
-        </div>
-        <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a3)">
-          <div class="money-card__label" style="color:var(--a3)">💼 Entrepreneurship is better for</div>
-          <ul>
-            <li>Wealth asymmetry.</li><li>Ownership.</li><li>Autonomy.</li>
-            <li>Tax planning possibilities.</li><li>Asset creation.</li>
-            <li>Personal brand.</li><li>Compounding reputation.</li><li>Upside beyond salary bands.</li>
-          </ul>
-        </div>
-        <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a1)">
-          <div class="money-card__label" style="color:var(--a1)">🚀 Startups are best for</div>
-          <ul>
-            <li>High-risk, high-upside bets.</li><li>Rapid learning.</li><li>Equity upside.</li>
-            <li>Building category-changing products.</li>
-            <li>People with high ambiguity tolerance.</li>
-            <li>People who can survive repeated failure.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 07 · THE SHADOW REALM (Hidden Costs)
-  ══════════════════════════════════════════ -->
-  <section id="ch-costs" class="section" data-chapter="ch-costs" aria-labelledby="ch-costs-title">
-    <div class="chapter-bg-num" aria-hidden="true">07</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-costs);--ch-border:var(--ch-costs);--ch-bg:var(--a2-15)">
-        <span class="ch-num">07</span>
-        <span>🌑</span>
-        <span>THE SHADOW REALM</span>
-      </div>
-      <h2 id="ch-costs-title" class="reveal stagger-1">Hidden Costs They Never Show You</h2>
-      <p class="chapter-intro reveal stagger-2">Financial, emotional, relational, and spiritual — costs the highlight reel hides.</p>
-
-      <div class="tab-group reveal stagger-3">
-        <div class="tab-bar" role="tablist">
-          <button class="tab-btn active" data-tab="hc-startup" role="tab" aria-selected="true">💼 Startup Costs</button>
-          <button class="tab-btn" data-tab="hc-corp" role="tab" aria-selected="false">🏢 Corporate Costs</button>
-        </div>
-        <div class="tab-panel active" data-panel="hc-startup" role="tabpanel">
-          <div id="carousel-hc-startup-host"></div>
-        </div>
-        <div class="tab-panel" data-panel="hc-corp" role="tabpanel">
-          <div id="carousel-hc-corp-host"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 08 · THE OVERRATED HALL
-  ══════════════════════════════════════════ -->
-  <section id="ch-rated" class="section" data-chapter="ch-rated" aria-labelledby="ch-rated-title">
-    <div class="chapter-bg-num" aria-hidden="true">08</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-rated);--ch-border:var(--ch-rated);--ch-bg:var(--a5-15)">
-        <span class="ch-num">08</span>
-        <span>📉</span>
-        <span>THE OVERRATED HALL</span>
-      </div>
-      <h2 id="ch-rated-title" class="reveal stagger-1">What Is Overrated</h2>
-      <p class="chapter-intro reveal stagger-2">Everyone hypes these — but the evidence says otherwise.</p>
-
-      <div class="tab-group reveal stagger-3">
-        <div class="tab-bar" role="tablist">
-          <button class="tab-btn active" data-tab="ov-startup" role="tab" aria-selected="true">🚀 In Startups</button>
-          <button class="tab-btn" data-tab="ov-corp" role="tab" aria-selected="false">🏢 In Corporate</button>
-        </div>
-        <div class="tab-panel active" data-panel="ov-startup" role="tabpanel">
-          <div id="carousel-ov-startup-host"></div>
-        </div>
-        <div class="tab-panel" data-panel="ov-corp" role="tabpanel">
-          <div id="carousel-ov-corp-host"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 09 · THE TREASURE VAULT (Hidden Gems)
-  ══════════════════════════════════════════ -->
-  <section id="ch-gems" class="section" data-chapter="ch-gems" aria-labelledby="ch-gems-title">
-    <div class="chapter-bg-num" aria-hidden="true">09</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-gems);--ch-border:var(--ch-gems);--ch-bg:var(--a4-15)">
-        <span class="ch-num">09</span>
-        <span>💎</span>
-        <span>THE TREASURE VAULT</span>
-      </div>
-      <h2 id="ch-gems-title" class="reveal stagger-1">Hidden Gems Hiding in Plain Sight</h2>
-      <p class="chapter-intro reveal stagger-2">The underrated, undervalued, underreported treasures of each path.</p>
-
-      <div class="tab-group reveal stagger-3">
-        <div class="tab-bar" role="tablist">
-          <button class="tab-btn active" data-tab="gem-startup" role="tab" aria-selected="true">🚀 Startup Gems</button>
-          <button class="tab-btn" data-tab="gem-corp"    role="tab" aria-selected="false">🏢 Corporate Gems</button>
-          <button class="tab-btn" data-tab="gem-emp"     role="tab" aria-selected="false">👤 Employee Gems</button>
-        </div>
-        <div class="tab-panel active" data-panel="gem-startup" role="tabpanel">
-          <div id="carousel-gem-startup-host"></div>
-        </div>
-        <div class="tab-panel" data-panel="gem-corp" role="tabpanel">
-          <div id="carousel-gem-corp-host"></div>
-        </div>
-        <div class="tab-panel" data-panel="gem-emp" role="tabpanel">
-          <div id="carousel-gem-emp-host" style="padding:24px;"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 10 · YOUR PATH
-  ══════════════════════════════════════════ -->
-  <section id="ch-path" class="section" data-chapter="ch-path" aria-labelledby="ch-path-title">
-    <div class="chapter-bg-num" aria-hidden="true">10</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-path);--ch-border:var(--ch-path);--ch-bg:var(--a6-15)">
-        <span class="ch-num">10</span>
-        <span>🧭</span>
-        <span>YOUR PATH</span>
-      </div>
-      <h2 id="ch-path-title" class="reveal stagger-1">Best Path by Personality</h2>
-      <p class="chapter-intro reveal stagger-2">Which career personality resonates with you?</p>
-      <div id="carousel-path-host" class="reveal stagger-3"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 11 · CAREER PORTFOLIO
-  ══════════════════════════════════════════ -->
-  <section id="ch-port" class="section" data-chapter="ch-port" aria-labelledby="ch-port-title">
-    <div class="chapter-bg-num" aria-hidden="true">11</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-port);--ch-border:var(--ch-port);--ch-bg:var(--a3-15)">
-        <span class="ch-num">11</span>
-        <span>🗂️</span>
-        <span>THE PORTFOLIO STRATEGY</span>
-      </div>
-      <h2 id="ch-port-title" class="reveal stagger-1">The Most Underrated Strategy: Career Portfolio</h2>
-      <p class="chapter-intro reveal stagger-2">Instead of asking, "Corporate or entrepreneur?" ask a smarter question.</p>
-
-      <div class="glass-card glass-card--solid reveal stagger-3" style="padding:28px 32px;">
-        <div class="content-card__accent" style="background:var(--grad-port);width:100%;height:3px;margin-bottom:20px;border-radius:var(--r-full);"></div>
-        <p style="font-family:var(--font-display);font-size:clamp(1rem,2.5vw,1.4rem);font-weight:700;color:var(--text-1)">
-          "How do I build a portfolio of income, skills, reputation, relationships, and ownership?"
-        </p>
-        <h5 class="mt-lg">A strong career portfolio may include:</h5>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px;">
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">💼 Main job</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">📈 Investments</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🏗️ Side business</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🌟 Personal brand</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🤝 Consulting</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🕸️ Network</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🎯 Deep skill</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">🏭 Industry expertise</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">✝️ Spiritual grounding</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">👨‍👩‍👦 Family stability</div>
-          <div class="stat-card" style="text-align:left;padding:14px 16px;">❤️ Health</div>
-        </div>
-        <div class="highlight-box mt-lg" style="border-left-color:var(--a3)">
-          <strong>Modern reality:</strong> The safest person is not the employee or the founder. The safest person is the one with portable skills, trusted relationships, financial discipline, and adaptive capacity.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 12 · WHAT MEDIA MISSES
-  ══════════════════════════════════════════ -->
-  <section id="ch-miss" class="section" data-chapter="ch-miss" aria-labelledby="ch-miss-title">
-    <div class="chapter-bg-num" aria-hidden="true">12</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-miss);--ch-border:var(--ch-miss);--ch-bg:var(--a5-15)">
-        <span class="ch-num">12</span>
-        <span>🔮</span>
-        <span>WHAT MEDIA RARELY TEACHES</span>
-      </div>
-      <h2 id="ch-miss-title" class="reveal stagger-1">What the Algorithm Won't Tell You</h2>
-      <p class="chapter-intro reveal stagger-2">Four truths that get zero likes but matter more than any Forbes feature.</p>
-      <div id="carousel-miss-host" class="reveal stagger-3"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 13 · THE FAITH DIMENSION
-  ══════════════════════════════════════════ -->
-  <section id="ch-faith" class="section" data-chapter="ch-faith" aria-labelledby="ch-faith-title">
-    <div class="chapter-bg-num" aria-hidden="true">13</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-faith);--ch-border:var(--ch-faith);--ch-bg:var(--a6-15)">
-        <span class="ch-num">13</span>
-        <span>✝️</span>
-        <span>THE FAITH DIMENSION</span>
-      </div>
-      <h2 id="ch-faith-title" class="reveal stagger-1">Christian Perspective: Work, Calling, and Ambition</h2>
-      <p class="chapter-intro reveal stagger-2">A Christian view should avoid two extremes.</p>
-
-      <div class="faith-grid reveal stagger-3">
-        <div class="faith-extreme wrong glass-card">
-          <h4>Extreme 1: "Ambition is bad"</h4>
-          <p class="mt-md"><strong>Not true.</strong> Scripture honors diligence, stewardship, skill, building, trade, leadership, and multiplication.</p>
-        </div>
-        <div class="faith-extreme wrong glass-card">
-          <h4>Extreme 2: "Success proves God's favor"</h4>
-          <p class="mt-md"><strong>Also not true.</strong> Wealth, growth, fame, and influence can be blessings, tests, or traps.</p>
-        </div>
-      </div>
-
-      <div class="faith-frame glass-card reveal stagger-4">
-        <h4 style="color:var(--ch-faith)">Better Frame:</h4>
-        <ul>
-          <li>Work is service.</li>
-          <li>Profit is not evil.</li>
-          <li>Exploitation is evil.</li>
-          <li>Excellence honors God.</li>
-          <li>People are not tools.</li>
-          <li>Money is a servant, not master.</li>
-          <li>Calling includes faithfulness, not just visibility.</li>
-          <li>Rest is obedience, not weakness.</li>
-          <li>Integrity is more important than scale.</li>
-        </ul>
-        <div class="highlight-box mt-lg" style="border-left-color:var(--ch-faith);font-size:1rem;font-weight:600;font-family:var(--font-display)">
-          Key question: Can you pursue success without being possessed by it?
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 14 · DECISION HQ
-  ══════════════════════════════════════════ -->
-  <section id="ch-decide" class="section" data-chapter="ch-decide" aria-labelledby="ch-decide-title">
-    <div class="chapter-bg-num" aria-hidden="true">14</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-decide);--ch-border:var(--ch-decide);--ch-bg:var(--a3-15)">
-        <span class="ch-num">14</span>
-        <span>🎮</span>
-        <span>DECISION HQ</span>
-      </div>
-      <h2 id="ch-decide-title" class="reveal stagger-1">Practical Decision Framework</h2>
-      <p class="chapter-intro reveal stagger-2">Your clear, honest checklist — word for word.</p>
-
-      <div class="money-grid reveal stagger-3" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
-
-        <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a6)">
-          <div class="money-card__label" style="color:var(--a6)">🏢 Choose corporate now if:</div>
-          <div id="decision-chooseCorporate-host"></div>
-        </div>
-
-        <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a3)">
-          <div class="money-card__label" style="color:var(--a3)">💼 Choose entrepreneurship now if:</div>
-          <div id="decision-chooseEntrepreneurship-host"></div>
-        </div>
-
-        <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a2)">
-          <div class="money-card__label" style="color:var(--a2)">🚀 Choose startup employment if:</div>
-          <div id="decision-chooseStartupEmployee-host"></div>
-        </div>
-
-        <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a1)">
-          <div class="money-card__label" style="color:var(--a1)">⚠️ Avoid entrepreneurship for now if:</div>
-          <div id="decision-avoidEntrepreneurship-host"></div>
-        </div>
-
-        <div class="money-card glass-card glass-card--solid" style="--card-accent:var(--a4)">
-          <div class="money-card__label" style="color:var(--a4)">⚠️ Avoid corporate complacency if:</div>
-          <div id="decision-avoidCorporateComplacency-host"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CH 15 · THE GREAT LEDGER (Summary Table)
-  ══════════════════════════════════════════ -->
-  <section id="ch-ledger" class="section" data-chapter="ch-ledger" aria-labelledby="ch-ledger-title">
-    <div class="chapter-bg-num" aria-hidden="true">15</div>
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-ledger);--ch-border:var(--ch-ledger);--ch-bg:var(--surface-2)">
-        <span class="ch-num">15</span>
-        <span>📊</span>
-        <span>THE GREAT LEDGER</span>
-      </div>
-      <h2 id="ch-ledger-title" class="reveal stagger-1">The Hidden Gems Summary</h2>
-
-      <!-- Table header (static) -->
-      <div class="reveal stagger-2" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;padding:12px 28px;background:var(--bg-2);border-radius:var(--r-md);margin-bottom:4px;font-family:var(--font-mono);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)">
-        <span>Path</span><span>📉 Overrated</span><span>💎 Underrated Gem</span>
-      </div>
-
-      <div id="carousel-ledger-host" class="reveal stagger-3"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       QUIZ ARENA ⚡ BOSS BATTLE
-  ══════════════════════════════════════════ -->
-  <section id="quiz-arena" class="section" data-chapter="ch-quiz" aria-labelledby="quiz-arena-title">
-    <div class="arena-bg" aria-hidden="true"></div>
-    <div class="chapter-bg-num" aria-hidden="true">⚡</div>
-    <div class="container quiz-shell">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-quiz);--ch-border:var(--ch-quiz);--ch-bg:var(--a1-15)">
-        <span>⚡</span>
-        <span>BOSS BATTLE</span>
-      </div>
-      <h2 id="quiz-arena-title" class="reveal stagger-1">Rapid Fire Quiz</h2>
-      <p class="chapter-intro reveal stagger-2">20 shuffled questions. 15 seconds each. Earn XP for every correct answer.</p>
-
-      <!-- IDLE VIEW -->
-      <div id="quiz-idle" class="glass-card glass-card--solid reveal stagger-3" style="padding:40px 32px;">
-        <div class="quiz-idle-view">
-          <div class="boss-icon">🏆</div>
-          <h3>Are you ready for the Boss Battle?</h3>
-          <p style="max-width:480px;">20 questions drawn from all 20 sections of The Great Career Quest. Shuffled hourly. Questions test your understanding of startup vs corporate reality — word for word from the source material.</p>
-          <button id="quiz-start-btn" class="btn btn-primary" style="margin-top:8px;">
-            ⚡ Start Boss Battle
-          </button>
-        </div>
-      </div>
-
-      <!-- ACTIVE VIEW -->
-      <div id="quiz-active" class="glass-card glass-card--solid" style="padding:28px 28px;display:none;">
-        <!-- Meta Row -->
-        <div class="quiz-meta-row">
-          <div>
-            <span class="quiz-score-display"><span id="quiz-score">0</span><span> pts</span></span>
-          </div>
-          <div id="quiz-q-num" class="mono" style="color:var(--text-3);font-size:.75rem">Q1 / 20</div>
-          <div class="quiz-streak" id="quiz-streak">🔥 × 0</div>
-        </div>
-        <!-- Timer -->
-        <div class="quiz-timer-bar-wrap">
-          <div class="quiz-timer-bar" id="quiz-timer-bar"></div>
-        </div>
-        <!-- Question -->
-        <div class="quiz-question-text" id="quiz-question">Loading…</div>
-        <!-- Options -->
-        <div class="quiz-options" id="quiz-options"></div>
-        <!-- Explanation -->
-        <div class="quiz-explanation" id="quiz-explain"></div>
-        <!-- Progress -->
-        <div class="quiz-progress-row">
-          <span id="quiz-progress-txt" class="mono" style="font-size:.7rem;color:var(--text-3)"></span>
-          <div class="quiz-progress-bar-wrap">
-            <div class="quiz-progress-bar" id="quiz-progress-bar" style="width:0%"></div>
-          </div>
-          <button id="quiz-next-btn" class="btn btn-primary btn-sm" style="display:none;">Next →</button>
-        </div>
-      </div>
-
-      <!-- RESULT VIEW -->
-      <div id="quiz-result" class="glass-card glass-card--solid" style="padding:40px 28px;display:none;">
-        <div class="quiz-result-view">
-          <div class="result-grade grad-text" id="result-grade">🏆</div>
-          <h3>Quest Complete!</h3>
-          <div class="result-breakdown">
-            <div class="result-stat">
-              <div class="result-stat-num" id="result-score">0</div>
-              <div class="result-stat-lbl">Score</div>
-            </div>
-            <div class="result-stat">
-              <div class="result-stat-num" id="result-correct">0/20</div>
-              <div class="result-stat-lbl">Correct</div>
-            </div>
-            <div class="result-stat">
-              <div class="result-stat-num" id="result-streak">0</div>
-              <div class="result-stat-lbl">Best Streak</div>
-            </div>
-          </div>
-          <button id="quiz-restart-btn" class="btn btn-ghost">🔄 Play Again</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       QUEST ORACLE — Question of the Day
-  ══════════════════════════════════════════ -->
-  <section id="qotd-section" class="section" aria-labelledby="qotd-title">
-    <div class="container">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-qotd);--ch-border:var(--ch-qotd);--ch-bg:var(--a2-15)">
-        <span>✨</span>
-        <span>QUEST ORACLE</span>
-      </div>
-      <h2 id="qotd-title" class="reveal stagger-1">Question of the Day</h2>
-      <p class="chapter-intro reveal stagger-2">Daily reflection questions — shuffled fresh every day.</p>
-
-      <div class="qotd-card reveal stagger-3">
-        <div class="qotd-label">✨ Today's Question</div>
-        <div class="qotd-question" id="qotd-question">Loading…</div>
-        <div class="qotd-reflection" id="qotd-reflection">…</div>
-        <div class="qotd-nav">
-          <button id="qotd-prev" class="carousel-btn" aria-label="Previous question">&#8592;</button>
-          <span id="qotd-num" class="carousel-counter">1 / 7</span>
-          <button id="qotd-next" class="carousel-btn" aria-label="Next question">&#8594;</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       BOTTOM LINE 🏁
-  ══════════════════════════════════════════ -->
-  <section id="ch-bottom" class="section" data-chapter="ch-bottom" aria-labelledby="ch-bottom-title">
-    <div class="chapter-bg-num" aria-hidden="true">🏁</div>
-    <div class="container" id="bottom-line" style="text-align:center">
-      <div class="chapter-label reveal" style="--ch-c:var(--ch-bottom);--ch-border:var(--ch-bottom);--ch-bg:var(--a2-15);margin-inline:auto;margin-bottom:24px;">
-        <span>🏁</span>
-        <span>BOTTOM LINE</span>
-      </div>
-      <h2 id="ch-bottom-title" class="reveal stagger-1" style="margin-bottom:24px">The Verdict</h2>
-      <div class="bottom-statement glass-card glass-card--solid reveal stagger-2" style="padding:36px 40px;">
-        <p style="font-family:var(--font-display);font-size:clamp(1rem,2.5vw,1.6rem);font-weight:700;line-height:1.65;color:var(--text-1);">
-          The media sells entrepreneurship as freedom and corporate as captivity, but the wiser truth is this: <strong style="background:var(--grad-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">corporate can be a training ground, entrepreneurship can be a wealth vehicle, startups can be an accelerated school of reality, and the best path is the one that fits your season, responsibilities, character, and risk capacity.</strong>
-        </p>
-        <p class="bottom-meta">Info current as of <strong>21 May 2026</strong>. Startup survival, labour-market change, AI disruption, and founder-wellbeing research are evolving, so the exact numbers may shift by country, industry, and economic cycle.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════ -->
-  <footer>
+<footer>
     <div class="container">
       <p>
         <strong>THE GREAT CAREER QUEST</strong> — Interactive Adventure · May 2026<br>
@@ -749,7 +303,6 @@
   <script src="js/particles.js"></script>
   <script src="js/app.js"></script>
 
-  <!-- Particle canvas init (after app.js sets up everything) -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       new GCQ.ParticleSystem('particle-canvas');

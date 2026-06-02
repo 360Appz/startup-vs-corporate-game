@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Great Career Quest — an interactive adventure exploring Startup vs Corporate vs Entrepreneurship. All the truths media never tells you.">
+  <title>Question of the Day - THE GREAT CAREER QUEST</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+  <!-- ══════════════════════════════════════════
+       CUSTOM CURSOR
+  ══════════════════════════════════════════ -->
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="cursor-dot"  aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════
+       ACHIEVEMENT TOASTS
+  ══════════════════════════════════════════ -->
+  <div id="achievement-container" aria-live="polite" aria-label="Achievements"></div>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html" aria-label="Back to main landing page">
+      GCQ <span>- THE GREAT CAREER QUEST</span>
+    </a>
+    <div class="nav-actions">
+      <button id="sound-btn" class="nav-btn" title="Toggle sounds" aria-label="Toggle sounds">🔊</button>
+      <button id="mobile-menu-btn" class="nav-btn nav-btn--menu" title="Open menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="index.html">Home</a>
+      <a href="honest-answer.html">01 - Core Truth</a>
+      <a href="big-myths.html">02 - The Myth Kingdom</a>
+      <a href="startup-vs-entrepreneurship.html">03 - Not The Same Thing</a>
+      <a href="media-hype.html">04 - Media Hype</a>
+      <a href="brutal-realities.html">05 - Brutal Realities</a>
+      <a href="money-reality.html">06 - Money Reality</a>
+      <a href="hidden-costs.html">07 - Hidden Costs</a>
+      <a href="overrated.html">08 - Overrated</a>
+      <a href="hidden-gems.html">09 - Hidden Gems</a>
+      <a href="best-path.html">10 - Best Path</a>
+      <a href="career-portfolio.html">11 - Career Portfolio</a>
+      <a href="algorithm-misses.html">12 - Algorithm Misses</a>
+      <a href="faith-work.html">13 - Faith & Work</a>
+      <a href="decision-framework.html">14 - Decision Framework</a>
+      <a href="gems-summary.html">15 - Gems Summary</a>
+      <a href="quiz.html">16 - Boss Battle</a>
+      <a href="question-of-the-day.html">17 - Quest Oracle</a>
+      <a href="verdict.html">18 - Bottom Line</a>
+    </div>
+  </nav>
+
+  <!-- XP Strip -->
+  <div id="xp-strip" aria-label="Quest progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div id="xp-fill"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  
+<div class="page-controls container reveal">
+    <a class="btn btn-ghost btn-sm" href="quiz.html">&larr; Boss Battle</a>
+    <a class="btn btn-primary btn-sm" href="index.html">Back to Main</a>
+    <a class="btn btn-ghost btn-sm" href="verdict.html">Bottom Line &rarr;</a>
+  </div>
+
+  <section id="qotd-section" class="section" aria-labelledby="qotd-title">
+    <div class="container">
+      <div class="chapter-label reveal" style="--ch-c:var(--ch-qotd);--ch-border:var(--ch-qotd);--ch-bg:var(--a2-15)">
+        <span>✨</span>
+        <span>QUEST ORACLE</span>
+      </div>
+      <h2 id="qotd-title" class="reveal stagger-1">Question of the Day</h2>
+      <p class="chapter-intro reveal stagger-2">Daily reflection questions — shuffled fresh every day.</p>
+
+      <div class="qotd-card reveal stagger-3">
+        <div class="qotd-label">✨ Today's Question</div>
+        <div class="qotd-question" id="qotd-question">Loading…</div>
+        <div class="qotd-reflection" id="qotd-reflection">…</div>
+        <div class="qotd-nav">
+          <button id="qotd-prev" class="carousel-btn" aria-label="Previous question">&#8592;</button>
+          <span id="qotd-num" class="carousel-counter">1 / 7</span>
+          <button id="qotd-next" class="carousel-btn" aria-label="Next question">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="page-controls container reveal">
+    <a class="btn btn-ghost btn-sm" href="quiz.html">&larr; Boss Battle</a>
+    <a class="btn btn-primary btn-sm" href="index.html">Back to Main</a>
+    <a class="btn btn-ghost btn-sm" href="verdict.html">Bottom Line &rarr;</a>
+  </div>
+
+<footer>
+    <div class="container">
+      <p>
+        <strong>THE GREAT CAREER QUEST</strong> — Interactive Adventure · May 2026<br>
+        All content sourced from original research. BLS · WEF · Kauffman · Gallup · Chicago Journals · Harvard Business School<br>
+        <span style="opacity:.5">Powered by pure HTML / CSS / JS — no framework, no dependencies, no compromises.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       SCRIPTS (order matters — no ES modules for file:// compat)
+  ══════════════════════════════════════════ -->
+  <script src="js/data.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

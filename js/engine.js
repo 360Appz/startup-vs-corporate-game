@@ -134,8 +134,6 @@
     this._updateBtn();
   }
   ThemeManager.prototype._updateBtn = function () {
-    var btn = document.getElementById('theme-btn');
-    if (btn) btn.textContent = this.current === 'dark' ? '☀️' : '🌙';
   };
   ThemeManager.prototype.toggle = function () {
     this.current = this.current === 'light' ? 'dark' : 'light';
